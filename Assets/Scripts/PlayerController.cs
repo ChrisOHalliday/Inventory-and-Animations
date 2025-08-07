@@ -7,10 +7,10 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
 
-    [SerializeField] Transform playerInputSpace = default;
+    //[SerializeField] Transform playerInputSpace = default;
 
-    [SerializeField] private float speed = 10.0f;
-    [SerializeField] private float jumpHeight = 20.0f;
+    //[SerializeField] private float speed = 10.0f;
+    //[SerializeField] private float jumpHeight = 20.0f;
  
     private Rigidbody playerRb;
     private Collider playerCollider;
@@ -65,11 +65,6 @@ public class PlayerController : MonoBehaviour
         float vertical = inputMovementVector.y;
         anim.SetFloat("Speed",vertical);
         anim.SetFloat("Direction", horizontal);
-
-        Vector3 inputVelocity = playerInputSpace.TransformDirection(inputMovementVector.x, 0, inputMovementVector.y) * speed * Time.fixedDeltaTime;
-        //Debug.Log(inputMovementVector);
-
-        playerRb.linearVelocity = inputVelocity;
         
     }
 
